@@ -1,22 +1,15 @@
+import { Alert, Box, CircularProgress, Stack, Typography } from '@mui/material';
 import * as React from 'react';
-import { useTitle } from '../hooks/useTitle';
 import { useSelector } from 'react-redux';
+import { PokemonFavorite, PokemonFavoriteTypeFilter } from '../features/favorite/components';
 import {
-  currentPokemonSelector,
-  changePokemonStatusSelector,
-  changePokemonErrorSelector,
-} from '../modules/pokemon';
+  favoriteFilteredPokemonSelector, favoritePokemonSelector, favoritePokemonTypeFilterSelector, favoritePokemonTypesSelector
+} from '../features/favorite/modules';
+import { PokemonContent, PokemonSearch } from '../features/pokemon/components';
 import {
-  favoritePokemonSelector,
-  favoritePokemonTypesSelector,
-  favoritePokemonTypeFilterSelector,
-  favoriteFilteredPokemonSelector,
-} from '../modules/favorite';
-import { PokemonSearch } from '../components/PokemonSearch';
-import { PokemonContent } from '../components/PokemonContent';
-import { PokemonFavorite } from '../components/PokemonFavorite';
-import { PokemonFavoriteTypeFilter } from '../components/PokemonFavoriteTypeFilter';
-import { Alert, Box, Stack, Typography, CircularProgress } from '@mui/material';
+  changePokemonErrorSelector, changePokemonStatusSelector, currentPokemonSelector
+} from '../features/pokemon/modules';
+import { useTitle } from '../hooks/useTitle';
 
 export default function PokemonPage() {
   useTitle(`today's pokemon`);

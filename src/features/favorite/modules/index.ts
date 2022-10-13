@@ -1,6 +1,4 @@
 export * from './selectors';
-import { useDispatch, useSelector } from 'react-redux';
-import { currentPokemonSelector } from '../pokemon/selectors';
 
 /**
  * Actions

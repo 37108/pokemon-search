@@ -1,9 +1,9 @@
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import { Box, Button, Menu, MenuItem } from '@mui/material';
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
-import { Box, Button, Menu, MenuItem } from '@mui/material';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
-import { favoriteActions } from '../modules/favorite';
+import { favoriteActions } from '../modules';
 
 export function PokemonFavoriteTypeFilter({ types, filter }) {
   const dispatch = useDispatch();

@@ -1,14 +1,9 @@
-import * as React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { Box, TextField, InputAdornment } from '@mui/material';
-import { pokemonActions } from '../modules/pokemon';
+import { Box, InputAdornment, TextField } from '@mui/material';
+import * as React from 'react';
 import { useDispatch } from 'react-redux';
+import { pokemonActions } from '../modules';
 
-/**
- * pikachu
- * spearow
- * zubat
- */
 export function PokemonSearch() {
   const [value, setValue] = React.useState('');
   const dispatch = useDispatch();

@@ -1,20 +1,14 @@
 import * as React from 'react';
 
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import {
   Box,
-  Card,
-  CardContent,
-  Typography,
-  IconButton,
-  CardActions,
-  CardMedia,
-  List,
-  ListItemText,
+  Card, CardActions, CardContent, CardMedia, IconButton, List,
+  ListItemText, Typography
 } from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch, useSelector } from 'react-redux';
-import { favoriteActions } from '../modules/favorite';
-import { currentPokemonSelector } from '../modules/pokemon';
+import { favoriteActions } from '../../favorite/modules';
+import { currentPokemonSelector } from '../modules';
 
 export function PokemonContent({ name, id, height, weight, types, sprites }) {
   const dispatch = useDispatch();
