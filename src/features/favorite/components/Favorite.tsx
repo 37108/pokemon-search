@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Card,
   Typography,
@@ -7,15 +7,15 @@ import {
   CardHeader,
   Box,
   IconButton,
-} from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { useDispatch } from 'react-redux';
+} from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { useDispatch } from "react-redux";
 
 export function PokemonFavorite({ name, sprites, types, id }) {
   const dispatch = useDispatch();
 
   return (
-    <Card sx={{ display: 'flex' }}>
+    <Card sx={{ display: "flex" }}>
       <CardHeader
         avatar={<Avatar aria-label="recipe" src={sprites.front_default} />}
         title={name}
@@ -33,12 +33,12 @@ export function PokemonFavorite({ name, sprites, types, id }) {
           </Stack>
         }
       />
-      <Box sx={{ ml: 'auto', mr: 4, my: 'auto' }}>
+      <Box sx={{ ml: "auto", mr: 4, my: "auto" }}>
         <IconButton
           aria-label="delete from favorite"
           onClick={() => {
             dispatch({
-              type: 'DELETE_FAVORITE',
+              type: "DELETE_FAVORITE",
               payload: {
                 id,
               },

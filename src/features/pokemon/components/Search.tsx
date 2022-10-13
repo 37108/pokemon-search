@@ -1,17 +1,17 @@
-import SearchIcon from '@mui/icons-material/Search';
-import { Box, InputAdornment, TextField } from '@mui/material';
-import * as React from 'react';
-import { useDispatch } from 'react-redux';
-import { pokemonActions } from '../modules';
+import SearchIcon from "@mui/icons-material/Search";
+import { Box, InputAdornment, TextField } from "@mui/material";
+import * as React from "react";
+import { useDispatch } from "react-redux";
+import { pokemonActions } from "../modules";
 
 export function PokemonSearch() {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState("");
   const dispatch = useDispatch();
 
   const onSubmitChangePokemon = React.useCallback(
     (event) => {
       event.preventDefault();
-      if (value === '') {
+      if (value === "") {
         return;
       }
       dispatch(pokemonActions.changePokemon(value.toLowerCase()));
@@ -21,21 +21,21 @@ export function PokemonSearch() {
   );
 
   return (
-    <Box sx={{ backgroundColor: 'rgb(64,42,26)' }}>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ backgroundColor: "rgb(64,42,26)" }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <img
           src="https://cdn.pixabay.com/photo/2016/11/21/00/26/philatelist-1844080_1280.jpg"
-          style={{ width: '320px' }}
+          style={{ width: "320px" }}
         />
       </Box>
       <Box
         component="form"
         onSubmit={onSubmitChangePokemon}
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
+          display: "flex",
+          justifyContent: "center",
           zIndex: 1,
-          transform: 'translateY(-120%)',
+          transform: "translateY(-120%)",
         }}
       >
         <TextField
@@ -47,8 +47,8 @@ export function PokemonSearch() {
           size="small"
           placeholder="search pokemon"
           sx={{
-            '&>.MuiOutlinedInput-root': {
-              backgroundColor: '#fff',
+            "&>.MuiOutlinedInput-root": {
+              backgroundColor: "#fff",
             },
           }}
           InputProps={{

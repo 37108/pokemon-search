@@ -1,2 +1,2 @@
-export * from './Favorite';
-export * from './TypeFilter';
+export * from "./Favorite";
+export * from "./TypeFilter";

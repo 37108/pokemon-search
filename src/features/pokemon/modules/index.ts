@@ -1,4 +1,4 @@
-export * from './selectors';
+export * from "./selectors";
 
 /**
  * Actions
@@ -7,22 +7,22 @@ export * from './selectors';
 /**
  * ユーザからポケモン名を受け取って状態を変更する
  */
-export const CHANGE_POKEMON = 'CHANGE_POKEMON';
+export const CHANGE_POKEMON = "CHANGE_POKEMON";
 
 /**
  * CHANGE_POKEMON の実行状態を変更する
  */
-export const CHANGE_POKEMON_STATUS = 'CHANGE_POKEMON_STATUS';
+export const CHANGE_POKEMON_STATUS = "CHANGE_POKEMON_STATUS";
 
 /**
  * Saga: API取得処理が正常終了した場合に状態を更新する
  */
-export const CHANGE_POKEMON_SUCCESS = 'CHANGE_POKEMON_SUCCESS';
+export const CHANGE_POKEMON_SUCCESS = "CHANGE_POKEMON_SUCCESS";
 
 /**
  * Saga: API取得処理が異常終了した場合に処理を行う
  */
-export const CHANGE_POKEMON_FAILED = 'CHANGE_POKEMON_FAILED';
+export const CHANGE_POKEMON_FAILED = "CHANGE_POKEMON_FAILED";
 
 /**
  * Action Creators
@@ -81,18 +81,18 @@ export default function reducer(
     | ReturnType<typeof changePokemonStatus>
 ) {
   switch (action.type) {
-    case 'CHANGE_POKEMON_SUCCESS':
+    case "CHANGE_POKEMON_SUCCESS":
       return {
         ...state,
         current: action.payload,
       };
-    case 'CHANGE_POKEMON_FAILED':
+    case "CHANGE_POKEMON_FAILED":
       return {
         ...state,
         current: undefined,
         error: action.payload.error,
       };
-    case 'CHANGE_POKEMON_STATUS':
+    case "CHANGE_POKEMON_STATUS":
       return {
         ...state,
         isLoading: action.payload.loading,

@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { takeEvery, fork, call, put } from 'redux-saga/effects';
-import { CHANGE_POKEMON, pokemonActions } from './index';
+import axios from "axios";
+import { takeEvery, fork, call, put } from "redux-saga/effects";
+import { CHANGE_POKEMON, pokemonActions } from "./index";
 
-const api = 'https://pokeapi.co/api/v2/pokemon';
+const api = "https://pokeapi.co/api/v2/pokemon";
 
 async function fetchThePokemon(name) {
   const res = await axios.get(`${api}/${name}`);

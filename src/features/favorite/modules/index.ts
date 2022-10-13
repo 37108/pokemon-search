@@ -1,4 +1,4 @@
-export * from './selectors';
+export * from "./selectors";
 
 /**
  * Actions
@@ -7,17 +7,17 @@ export * from './selectors';
 /**
  * 現在のポケモンをお気に入りに登録する
  */
-export const ADD_FAVORITE = 'ADD_FAVORITE';
+export const ADD_FAVORITE = "ADD_FAVORITE";
 
 /**
  * 選択したポケモンをお気に入りから削除する
  */
-export const DELETE_FAVORITE = 'DELETE_FAVORITE';
+export const DELETE_FAVORITE = "DELETE_FAVORITE";
 
 /**
  * フィルターする種別を選択する
  */
-export const FILTER_TYPE = 'FILTER_TYPE';
+export const FILTER_TYPE = "FILTER_TYPE";
 
 /**
  * Action Creators

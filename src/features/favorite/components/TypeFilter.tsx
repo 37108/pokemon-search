@@ -1,9 +1,9 @@
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import { Box, Button, Menu, MenuItem } from '@mui/material';
-import * as React from 'react';
-import { useDispatch } from 'react-redux';
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import { Box, Button, Menu, MenuItem } from "@mui/material";
+import * as React from "react";
+import { useDispatch } from "react-redux";
 
-import { favoriteActions } from '../modules';
+import { favoriteActions } from "../modules";
 
 export function PokemonFavoriteTypeFilter({ types, filter }) {
   const dispatch = useDispatch();
@@ -16,10 +16,10 @@ export function PokemonFavoriteTypeFilter({ types, filter }) {
           setAnchorEl(event.currentTarget);
         }}
         sx={{
-          display: 'flex',
-          alignItems: 'center',
+          display: "flex",
+          alignItems: "center",
           mb: 1,
-          color: 'text.secondary',
+          color: "text.secondary",
         }}
         startIcon={<FilterAltIcon />}
       >

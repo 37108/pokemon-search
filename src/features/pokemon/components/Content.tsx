@@ -1,14 +1,20 @@
-import * as React from 'react';
+import * as React from "react";
 
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import {
   Box,
-  Card, CardActions, CardContent, CardMedia, IconButton, List,
-  ListItemText, Typography
-} from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux';
-import { favoriteActions } from '../../favorite/modules';
-import { currentPokemonSelector } from '../modules';
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  IconButton,
+  List,
+  ListItemText,
+  Typography,
+} from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { favoriteActions } from "../../favorite/modules";
+import { currentPokemonSelector } from "../modules";
 
 export function PokemonContent({ name, id, height, weight, types, sprites }) {
   const dispatch = useDispatch();
@@ -18,7 +24,7 @@ export function PokemonContent({ name, id, height, weight, types, sprites }) {
     dispatch(favoriteActions.addFavorite(pokemon));
   }, [dispatch]);
   return (
-    <Card sx={{ display: 'flex' }}>
+    <Card sx={{ display: "flex" }}>
       <Box>
         <CardContent>
           <Typography variant="h5" gutterBottom component="h2">
@@ -56,7 +62,7 @@ export function PokemonContent({ name, id, height, weight, types, sprites }) {
         component="img"
         image={sprites.front_default}
         sx={{
-          ml: 'auto',
+          ml: "auto",
           width: 240,
           height: 240,
         }}

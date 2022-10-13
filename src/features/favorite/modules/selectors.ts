@@ -41,7 +41,7 @@ export function favoriteFilteredPokemonSelector(state) {
   }
   const favorite = state.favorite.items;
 
-  if (type === 'all') {
+  if (type === "all") {
     return favorite;
   }
 
