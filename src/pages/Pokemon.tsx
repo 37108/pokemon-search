@@ -1,5 +1,4 @@
 import { Alert, Box, CircularProgress, Stack, Typography } from "@mui/material";
-import * as React from "react";
 import { useSelector } from "react-redux";
 import {
   PokemonFavorite,
@@ -19,7 +18,7 @@ import {
 } from "../features/pokemon/modules";
 import { useTitle } from "../hooks/useTitle";
 
-export default function PokemonPage() {
+export function PokemonPage() {
   useTitle(`today's pokemon`);
   const pokemon = useSelector(currentPokemonSelector);
   const isPokemonLoading = useSelector(changePokemonStatusSelector);

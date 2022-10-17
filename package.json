@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\"",
     "eslint": "eslint ./src --ext ts,tsx --fix",
+    "eslint:check": "eslint ./src --ext ts,tsx",
     "type": "tsc -p . --noEmit",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
@@ -26,6 +28,7 @@
     "react-dom": "^18.2.0",
     "react-native": ">=0.59",
     "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.2",
     "redux": "^4.2.0",
     "redux-saga": "^1.2.1",
     "reselect": "^4.1.6",

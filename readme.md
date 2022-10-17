@@ -7,13 +7,7 @@ $ yarn dev
 ```
 
 ## 実装予定の機能
-- [ ] features での依存を公開範囲に留める
-  - [ ] [ESLint のルール](https://github.com/alan2207/bulletproof-react/blob/master/.eslintrc.js#L39-L44)を追加する
-  - [ ] ESLint, Prettier, TSC を中心にコードのクリーンアップをする
-- [ ] React Router を追加する
 - [ ] Material UI から Tailwind を利用した自前のUIに切り替えていく / `src/components` に共通コンポーネントを作成する
-
-
 - [ ] ポケモンの検索画面を作る
   - [x] ポケモンのなまえを表示する
   - [x] ポケモンのID, Weight, Heightを表示する
