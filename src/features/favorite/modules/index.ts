@@ -1,3 +1,5 @@
+import { Pokemon } from "../../pokemon";
+
 export * from "./selectors";
 
 /**
@@ -55,12 +57,18 @@ export const favoriteActions = {
  * Reducer
  */
 export default function reducer(
-  state = {
+  state: {
+    items: Pokemon[];
+    filterType: string | undefined;
+  } = {
     items: [],
     filterType: undefined,
   },
   action: ReturnType<typeof addFavorite> | ReturnType<typeof deleteFavorite>
-) {
+): {
+  items: Pokemon[];
+  filterType: string | undefined;
+} {
   switch (action.type) {
     case ADD_FAVORITE:
       if (
@@ -75,7 +83,10 @@ export default function reducer(
         items: [...state.items, action.payload],
       };
     case DELETE_FAVORITE:
-      return state.items.filter((item) => item.id !== action.payload.id);
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== action.payload.id),
+      };
     case FILTER_TYPE:
       return {
         ...state,

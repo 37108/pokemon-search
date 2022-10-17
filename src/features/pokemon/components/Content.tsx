@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import {
   Box,
@@ -12,17 +10,26 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
+import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { favoriteActions } from "../../favorite/modules";
+import { Pokemon } from "../models";
 import { currentPokemonSelector } from "../modules";
 
-export function PokemonContent({ name, id, height, weight, types, sprites }) {
+export function PokemonContent({
+  name,
+  id,
+  height,
+  weight,
+  types,
+  sprites,
+}: Pick<Pokemon, "name" | "id" | "height" | "weight" | "types" | "sprites">) {
   const dispatch = useDispatch();
   const pokemon = useSelector(currentPokemonSelector);
 
   const addFavorite = React.useCallback(() => {
     dispatch(favoriteActions.addFavorite(pokemon));
-  }, [dispatch]);
+  }, [dispatch, pokemon]);
   return (
     <Card sx={{ display: "flex" }}>
       <Box>
@@ -41,9 +48,7 @@ export function PokemonContent({ name, id, height, weight, types, sprites }) {
           </Typography>
           <List>
             {types.map(({ type }) => (
-              <ListItemText variant="caption" key={type.name}>
-                {type.name}
-              </ListItemText>
+              <ListItemText key={type.name}>{type.name}</ListItemText>
             ))}
           </List>
         </CardContent>

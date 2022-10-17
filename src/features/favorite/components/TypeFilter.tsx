@@ -5,7 +5,13 @@ import { useDispatch } from "react-redux";
 
 import { favoriteActions } from "../modules";
 
-export function PokemonFavoriteTypeFilter({ types, filter }) {
+export function PokemonFavoriteTypeFilter({
+  types,
+  filter,
+}: {
+  types: string[];
+  filter: string | undefined;
+}) {
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 

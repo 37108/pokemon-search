@@ -9,7 +9,7 @@ export function PokemonSearch() {
   const dispatch = useDispatch();
 
   const onSubmitChangePokemon = React.useCallback(
-    (event) => {
+    (event: React.FormEvent<HTMLInputElement>) => {
       event.preventDefault();
       if (value === "") {
         return;
@@ -39,7 +39,7 @@ export function PokemonSearch() {
         }}
       >
         <TextField
-          id="pokemon-serach"
+          id="pokemon-search"
           value={value}
           onChange={(event) => {
             setValue(event.target.value);

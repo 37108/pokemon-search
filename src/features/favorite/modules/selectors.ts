@@ -1,23 +1,24 @@
 /**
  * Selectors
  */
+import { RootState } from "../../../store";
 
 /**
  * お気に入り登録したポケモン情報を取得する
  */
-export function favoritePokemonSelector(state) {
+export function favoritePokemonSelector(state: RootState) {
   return state.favorite.items;
 }
 
 /**
  * お気に入り登録したポケモンのタイプ一覧を取得する
  */
-export function favoritePokemonTypesSelector(state) {
+export function favoritePokemonTypesSelector(state: RootState) {
   const favorite = state.favorite.items;
   if (!favorite) {
     return [];
   }
-  const types = favorite.reduce((prev, cur) => {
+  const types = favorite.reduce((prev: string[], cur) => {
     return [...prev, ...cur.types.map((item) => item.type.name)];
   }, []);
 
@@ -27,15 +28,15 @@ export function favoritePokemonTypesSelector(state) {
 /**
  * フィルター情報を取得する
  */
-export function favoritePokemonTypeFilterSelector(state) {
+export function favoritePokemonTypeFilterSelector(state: RootState) {
   return state.favorite.filterType;
 }
 
 /**
  * お気に入り登録したポケモンのタイプでフィルターした情報を返す
  */
-export function favoriteFilteredPokemonSelector(state) {
-  const type: string | undefined = state.favorite.filterType;
+export function favoriteFilteredPokemonSelector(state: RootState) {
+  const type = state.favorite.filterType;
   if (!type) {
     return [];
   }

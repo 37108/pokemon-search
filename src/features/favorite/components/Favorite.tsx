@@ -1,17 +1,22 @@
-import * as React from "react";
-import {
-  Card,
-  Typography,
-  Stack,
-  Avatar,
-  CardHeader,
-  Box,
-  IconButton,
-} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import {
+  Avatar,
+  Box,
+  Card,
+  CardHeader,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { useDispatch } from "react-redux";
+import { Pokemon } from "../../pokemon";
 
-export function PokemonFavorite({ name, sprites, types, id }) {
+export function PokemonFavorite({
+  name,
+  sprites,
+  types,
+  id,
+}: Pick<Pokemon, "name" | "sprites" | "types" | "id">) {
   const dispatch = useDispatch();
 
   return (

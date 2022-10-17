@@ -1,3 +1,5 @@
+import { Pokemon } from "../models";
+
 export * from "./selectors";
 
 /**
@@ -69,7 +71,11 @@ export const pokemonActions = {
  * Reducer
  */
 export default function reducer(
-  state = {
+  state: {
+    current: Pokemon | undefined;
+    isLoading: boolean;
+    error: string | undefined;
+  } = {
     current: undefined,
     isLoading: false,
     error: undefined,
@@ -79,20 +85,24 @@ export default function reducer(
     | ReturnType<typeof changePokemonSuccess>
     | ReturnType<typeof changePokemonFailed>
     | ReturnType<typeof changePokemonStatus>
-) {
+): {
+  current: Pokemon | undefined;
+  isLoading: boolean;
+  error: string | undefined;
+} {
   switch (action.type) {
-    case "CHANGE_POKEMON_SUCCESS":
+    case CHANGE_POKEMON_SUCCESS:
       return {
         ...state,
         current: action.payload,
       };
-    case "CHANGE_POKEMON_FAILED":
+    case CHANGE_POKEMON_FAILED:
       return {
         ...state,
         current: undefined,
         error: action.payload.error,
       };
-    case "CHANGE_POKEMON_STATUS":
+    case CHANGE_POKEMON_STATUS:
       return {
         ...state,
         isLoading: action.payload.loading,
