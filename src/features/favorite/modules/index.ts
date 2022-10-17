@@ -56,7 +56,7 @@ export const favoriteActions = {
 /**
  * Reducer
  */
-export default function reducer(
+export function favoriteReducer(
   state: {
     items: Pokemon[];
     filterType: string | undefined;

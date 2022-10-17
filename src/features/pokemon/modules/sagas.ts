@@ -33,6 +33,6 @@ function* changePokemonSaga() {
   yield takeEvery(CHANGE_POKEMON, changePokemon);
 }
 
-export default function* pokemonSagas() {
+export function* pokemonSagas() {
   yield fork(changePokemonSaga);
 }

@@ -35,7 +35,7 @@ const config = {
     'no-restricted-imports': [
       'error',
       {
-        patterns: ['@/features/*/*'],
+        patterns: ['./features/*/*'],
       },
     ],
     "import/order": [

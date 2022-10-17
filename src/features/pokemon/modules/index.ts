@@ -70,7 +70,7 @@ export const pokemonActions = {
 /**
  * Reducer
  */
-export default function reducer(
+export function pokemonReducer(
   state: {
     current: Pokemon | undefined;
     isLoading: boolean;

@@ -1,0 +1,1 @@
+export { favoriteReducer } from './modules';
