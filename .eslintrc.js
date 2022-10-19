@@ -32,21 +32,41 @@ const config = {
     "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    'no-restricted-imports': [
-      'error',
+    "no-restricted-imports": [
+      "error",
       {
-        patterns: ['./features/*/*'],
+        patterns: ['@/features/*/*'],
       },
     ],
     "import/order": [
       "error",
       {
+        pathGroups: [
+          {
+            pattern: "@/**",
+            group: "parent",
+            position: "before",
+          },
+        ],
         alphabetize: {
           order: "asc",
         },
       },
     ],
   },
+  overrides: [
+    {
+      files: ["src/features/*/**"],
+      rules: {
+        "no-restricted-imports": [
+          "error",
+          {
+            patterns: ["../../*/**"],
+          },
+        ],
+      },
+    },
+  ],
 };
 
 module.exports = config;
