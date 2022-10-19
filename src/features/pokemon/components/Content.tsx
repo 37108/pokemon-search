@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { favoriteActions } from "../../favorite/modules";
+import { favoriteActions } from "@/features/favorite";
 import { Pokemon } from "../models";
 import { currentPokemonSelector } from "../modules";
 

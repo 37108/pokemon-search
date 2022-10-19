@@ -1,7 +1,7 @@
 /**
  * Selectors
  */
-import { RootState } from "../../../store";
+import { RootState } from "@/store";
 
 /**
  * お気に入り登録したポケモン情報を取得する

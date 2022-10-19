@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { Pokemon } from "../../pokemon";
+import { Pokemon } from "@/features/pokemon";
 
 export function PokemonFavorite({
   name,

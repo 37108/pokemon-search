@@ -54,19 +54,6 @@ const config = {
       },
     ],
   },
-  overrides: [
-    {
-      files: ["src/features/*/**"],
-      rules: {
-        "no-restricted-imports": [
-          "error",
-          {
-            patterns: ["../../*/**"],
-          },
-        ],
-      },
-    },
-  ],
 };
 
 module.exports = config;

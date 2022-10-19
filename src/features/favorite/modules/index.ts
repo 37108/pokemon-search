@@ -1,4 +1,4 @@
-import { Pokemon } from "../../pokemon";
+import { Pokemon } from "@/features/pokemon";
 
 export * from "./selectors";
 

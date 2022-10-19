@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, {AxiosError} from "axios";
 import { call, fork, put, takeEvery } from "redux-saga/effects";
 import { Pokemon } from "../models";
 import { CHANGE_POKEMON, pokemonActions } from "./index";
@@ -22,9 +22,10 @@ function* changePokemon(
     yield put(pokemonActions.changePokemonStatus(false));
     yield put(pokemonActions.changePokemonSuccess(pokemon));
   } catch (error) {
+    console.log(error)
     if (axios.isAxiosError(error)) {
       yield put(pokemonActions.changePokemonStatus(false));
-      yield put(pokemonActions.changePokemonFailed(error.response?.data));
+      yield put(pokemonActions.changePokemonFailed((error as AxiosError<any>).response?.data));
     }
   }
 }

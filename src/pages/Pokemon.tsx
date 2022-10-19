@@ -3,19 +3,18 @@ import { useSelector } from "react-redux";
 import {
   PokemonFavorite,
   PokemonFavoriteTypeFilter,
-} from "../features/favorite/components";
-import {
   favoriteFilteredPokemonSelector,
   favoritePokemonSelector,
   favoritePokemonTypeFilterSelector,
   favoritePokemonTypesSelector,
-} from "../features/favorite/modules";
-import { PokemonContent, PokemonSearch } from "../features/pokemon/components";
+} from "@/features/favorite";
 import {
+  PokemonContent,
+  PokemonSearch,
   changePokemonErrorSelector,
   changePokemonStatusSelector,
   currentPokemonSelector,
-} from "../features/pokemon/modules";
+} from "@/features/pokemon";
 import { useTitle } from "../hooks/useTitle";
 
 export function PokemonPage() {
